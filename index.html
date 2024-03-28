@@ -1,0 +1,281 @@
+<html>
+
+<head>
+	<title>Resume Builder</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/scroll.css"> -->
+	<link rel="stylesheet" type="text/css" href="column_scroll.css">
+	<link rel="stylesheet" type="text/css" href="thin_scroll.css">
+	<link rel="stylesheet" type="text/css" href="theme.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+	<div class="row">
+
+
+		<div class="col-sm-3 no-print" id="left">
+
+			<div id="panel">
+
+				<div id="notice">
+				</div>
+
+				<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#usageModal">VIEW INSTRUCTIONS</button>
+				<button class="btn btn-block btn-success" onclick="window.print()">PRINT AS PDF</button>
+
+				<hr>
+
+				<h3 class="text-center">Template settings</h3>
+				<button id="defaultTemplateBtn" class="btn btn-block btn-danger" onclick="template('default');">Use official IITG template</button>
+				<button id="customTemplateBtn" class="btn btn-block btn-default" onclick="template('custom');">Use custom template</button>
+				<h5>
+					Minor
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="minor" id="minorShow">Show</div>
+						<div class="toggle-option selected" data-toggle="minor" id="minorHide">Hide</div>
+					</div>
+				</h5>
+				<h5>
+					Contact lines
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="contact" id="contact3">3</div>
+						<div class="toggle-option selected" data-toggle="contact" id="contact4">4</div>
+						<div class="toggle-option" data-toggle="contact" id="contact5">5</div>
+					</div>
+				</h5>
+				<h5>
+					Horizontal margin
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="margin" id="margin1">1</div>
+						<div class="toggle-option" data-toggle="margin" id="margin2">2</div>
+						<div class="toggle-option" data-toggle="margin" id="margin3">3</div>
+						<div class="toggle-option selected" data-toggle="margin" id="margin4">4</div>
+						<div class="toggle-option" data-toggle="margin" id="margin5">5</div>
+						<div class="toggle-option" data-toggle="margin" id="margin6">6</div>
+					</div>
+				</h5>
+				<h5>
+					Line spacing
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="line" id="line1">1</div>
+						<div class="toggle-option" data-toggle="line" id="line2">2</div>
+						<div class="toggle-option" data-toggle="line" id="line3">3</div>
+						<div class="toggle-option selected" data-toggle="line" id="line4">4</div>
+						<div class="toggle-option" data-toggle="line" id="line5">5</div>
+						<div class="toggle-option" data-toggle="line" id="line6">6</div>
+					</div>
+				</h5>
+				<h5>
+					Center column no.
+					<div class="toggle-button">
+						<div class="toggle-option multi-select" data-toggle="column" id="column1">1</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column2">2</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column3">3</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column4">4</div>
+					</div>
+				</h5>
+				
+				<br>
+				
+				<div id="customTemplateOptions">
+					<h5>
+						Font type
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="font" id="fontVerdanaSans">1</div>
+							<div class="toggle-option" data-toggle="font" id="fontVerdanaSerif">2</div>
+							<div class="toggle-option" data-toggle="font" id="fontRoboto">3</div>
+							<div class="toggle-option selected" data-toggle="font" id="fontDroid">4</div>
+						</div>
+					</h5>
+					<h5>
+						Title case
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="case" id="caseNormal">Default</div>
+							<div class="toggle-option" data-toggle="case" id="caseUpper">Uppercase</div>
+						</div>
+					</h5>
+					<h5>
+						Title style
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="title" id="titleRuled">Ruled</div>
+							<div class="toggle-option" data-toggle="title" id="titleShaded">Shaded</div>
+						</div>
+					</h5>
+					<h5>
+						Title rule position
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="rule" id="ruleAbove">Above title</div>
+							<div class="toggle-option" data-toggle="rule" id="ruleBelow">Below title</div>
+						</div>
+					</h5>
+					<br>
+					<h5>
+						Image
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="image" id="imageShow">Show</div>
+							<div class="toggle-option" data-toggle="image" id="imageHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Roll No
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="roll" id="rollShow">Show</div>
+							<div class="toggle-option" data-toggle="roll" id="rollHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Course
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="course" id="course1">1 line</div>
+							<div class="toggle-option" data-toggle="course" id="course2">2 lines</div>
+						</div>
+					</h5>
+					<h5>
+						Table border
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="table" id="tableShow">Show</div>
+							<div class="toggle-option" data-toggle="table" id="tableHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Education year column
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="edyear" id="edyearFirst">First</div>
+							<div class="toggle-option" data-toggle="edyear" id="edyearLat">Last</div>
+						</div>
+					</h5>
+					<h5>
+						Experience layout
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="experience" id="experience1">L1</div>
+							<div class="toggle-option" data-toggle="experience" id="experience2">L2</div>
+						</div>
+					</h5>
+					<h5>
+						Projects layout
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="projects" id="projects1">L1</div>
+							<div class="toggle-option" data-toggle="projects" id="projects2">L2</div>
+						</div>
+					</h5>
+					<br>
+				</div>
+
+				<h5>
+					<button class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#sectionToggleModal">Show/Hide sections</button>
+				</h5>
+
+				<hr>
+
+				<h3 class="text-center">Lists and points</h3>
+				<button class="btn btn-block btn-xs btn-success" onclick="insertList();">+ Insert sub-list</button>
+				<button class="btn btn-block btn-xs btn-warning" onclick="decreaseIndent();">&lt;&lt; Decrese indentation</button>
+				<button class="btn btn-block btn-xs btn-warning" onclick="increaseIndent();">&gt;&gt; Increase indentation</button>
+				<h5>
+					List style :
+					<div class="toggle-button">
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('disc');">&#9899;</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('circle');">&#9898;</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('square');">&#9632;</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('dash');">-</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('decimal');">1.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('upper-roman');">I.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('lower-roman');">i.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('upper-alpha');">A.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle('lower-alpha');">a.</button>
+					</div>
+				</h5>
+
+			</div>
+
+		</div>
+
+
+		<div class="col-sm-9 text-center" id="right">
+
+			<div id="page" class="droid">
+
+				<div class="row" style="margin-bottom:10px;">
+				<div class="col-sm-12">
+					<div style="display:inline-block;" id="image_box">
+						<img src="./bhavi.jpg" height="80" width="80">
+					</div>
+					<div id="info" style="display:inline-block;">
+						<h2 id="contentName">Kunamaneni.Bhargavi</h2>
+						<h5 id="contentRoll">Roll Number :20ND1A5468</h5>
+						<h5 id="contentCourse">B.Tech - CSE Engineering</h5>
+						<h5 id="contentBranch">AIDS</h5>
+						<h5 id="contentMinor">Minor </h5>
+						<h5 id="contentCollege">Stmw</h5>
+					</div>
+					<div id="contact" style="float:right; display:inline-block;">
+						+91-8678987678<br>
+						bhargavikunamneni26@gmail.com<br>
+						<span class="light" id="contactLink1">www.linkedin.com/in/kunamaneni-bhargavi-533941273<br></span>
+						<span class="light" id="contactLink2">https://github.com/kunamanenibhargavi<br></span>
+					</div>
+				</div>
+				</div>
+
+			
+				<div class="section" id="sectionEducation">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Education</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul class="nobullet">
+					<li>
+						<table class="table customBordered" id="educationTable">
+							<tr>
+								<td class="header"><strong>B.Tech</strong></td>
+								<td class="header"><strong>Degree / Certificate</strong></td>
+								<td class="header"><strong>Institute / Board</strong></td>
+								<td class="header"><strong>CGPA/Percentage</strong></td>
+							</tr>
+							<tr>
+								<td>2024</td>
+								<td>B.Tech</td>
+								<td>St.Marys women's engineering college</td>
+								<td>7.80 </td>
+							</tr>
+							<tr>
+								<td>2020</td>
+								<td>Intermediate</td>
+								<td>pbn college</td>
+								<td>94.0</td>
+							</tr>
+							<tr>
+								<td>2018</td>
+								<td>SSC</td>
+								<td>Zp High School</td>
+								<td>9.8</td>
+							</tr>
+						</table>
+					</li>
+					</ul>
+				</div>
+
+
+				</div>
+
+			</div>
+			
+		</div>
+
+
+	</div>
+
+</div>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
